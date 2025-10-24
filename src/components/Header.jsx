@@ -1,6 +1,7 @@
 // src/components/Header.jsx
 
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,19 +11,18 @@ import kiruLogo from '../assets/kiruLogo.png';
 
 // Datos de navegación
 const navLinks = [
-    { id: 'home', label: 'Inicio', href: '/' },
-    { id: 'servicios', label: 'Servicios', href: '/servicios' },
-    { id: 'stack', label: 'Stack', href: '/stack' },
-    { id: 'manifiesto', label: 'Manifiesto', href: '/manifiesto' },
-    { id: 'quienes-somos', label: 'Quiénes Somos', href: '/quienes-somos' }
+    { id: 'home', label: 'Inicio', path: '/' },
+    { id: 'servicios', label: 'Servicios', path: '/servicios' },
+    { id: 'stack', label: 'Stack', path: '/stack' },
+    { id: 'manifiesto', label: 'Manifiesto', path: '/manifiesto' },
+    { id: 'quienes-somos', label: 'Quiénes Somos', path: '/quienes-somos' }
 ];
 
 // Componente para el logo
-const Logo = ({ onClick }) => (
-    <div 
-        className="logo d-flex align-items-center gap-3 cursor-pointer"
-        onClick={onClick}
-        style={{ cursor: 'pointer' }}
+const Logo = () => (
+    <Link 
+        to="/"
+        className="logo d-flex align-items-center gap-3 text-decoration-none"
     >
         <img 
             src={kiruLogo} 
@@ -42,17 +42,14 @@ const Logo = ({ onClick }) => (
                 Web Developers
             </span>
         </div>
-    </div>
+    </Link>
 );
 
 // Componente para enlaces de navegación
-const NavLink = ({ link, isActive, onClick }) => (
+const NavLinkItem = ({ link, isActive }) => (
     <Nav.Link 
-        href={link.href}
-        onClick={(e) => {
-            e.preventDefault();
-            onClick(link.href);
-        }}
+        as={Link}
+        to={link.path}
         className={`text-white px-3 position-relative ${isActive ? 'fw-bold' : ''}`}
         style={{
             transition: 'color 0.2s ease',
@@ -86,9 +83,10 @@ const CTAButton = ({ onClick, className = "" }) => (
 );
 
 // Componente Header principal
-const Header = ({ activeLink = 'Home' }) => {
+const Header = () => {
     const [show, setShow] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const location = useLocation();
 
     // Efecto para detectar scroll
     useEffect(() => {
@@ -104,23 +102,23 @@ const Header = ({ activeLink = 'Home' }) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const handleLogoClick = () => {
-        window.location.href = '/';
-    };
-
-    const handleNavClick = (href) => {
-        window.location.href = href;
-        handleClose();
-    };
-
     const handleCTAClick = () => {
         console.log('Abrir modal de asesoría');
-        // Aquí puedes abrir un modal o redirigir
         handleClose();
     };
 
-    // Normalizar activeLink
-    const normalizedActiveLink = activeLink.toLowerCase();
+    // Determinar página activa basada en la ruta actual
+    const getActiveLink = () => {
+        const path = location.pathname;
+        if (path === '/') return 'home';
+        if (path.startsWith('/servicios')) return 'servicios';
+        if (path.startsWith('/stack')) return 'stack';
+        if (path.startsWith('/manifiesto')) return 'manifiesto';
+        if (path.startsWith('/quienes-somos')) return 'quienes-somos';
+        return '';
+    };
+
+    const activeLink = getActiveLink();
 
     return (
         <header 
@@ -133,7 +131,7 @@ const Header = ({ activeLink = 'Home' }) => {
             <Container>
                 <Navbar expand="lg" className="py-3">
                     {/* Logo */}
-                    <Logo onClick={handleLogoClick} />
+                    <Logo />
 
                     {/* Toggle para móvil */}
                     <Navbar.Toggle 
@@ -149,18 +147,13 @@ const Header = ({ activeLink = 'Home' }) => {
                     {/* Navegación Desktop */}
                     <Navbar.Collapse className="d-none d-lg-flex justify-content-end">
                         <Nav className="gap-2 align-items-center">
-                            {navLinks.map((link) => {
-                                const isActive = normalizedActiveLink === link.id || 
-                                               (link.id === 'home' && normalizedActiveLink === 'home');
-                                return (
-                                    <NavLink
-                                        key={link.id}
-                                        link={link}
-                                        isActive={isActive}
-                                        onClick={handleNavClick}
-                                    />
-                                );
-                            })}
+                            {navLinks.map((link) => (
+                                <NavLinkItem
+                                    key={link.id}
+                                    link={link}
+                                    isActive={activeLink === link.id}
+                                />
+                            ))}
                             <CTAButton onClick={handleCTAClick} className="ms-2" />
                         </Nav>
                     </Navbar.Collapse>
@@ -179,28 +172,23 @@ const Header = ({ activeLink = 'Home' }) => {
                             closeVariant="white"
                         >
                             <Offcanvas.Title>
-                                <Logo onClick={() => {
-                                    handleLogoClick();
-                                    handleClose();
-                                }} />
+                                <Logo />
                             </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="flex-column gap-3">
                                 {navLinks.map((link) => {
-                                    const isActive = normalizedActiveLink === link.id || 
-                                                   (link.id === 'home' && normalizedActiveLink === 'home');
+                                    const isActive = activeLink === link.id;
                                     return (
                                         <Nav.Link
                                             key={link.id}
-                                            href={link.href}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                handleNavClick(link.href);
-                                            }}
+                                            as={Link}
+                                            to={link.path}
+                                            onClick={handleClose}
                                             className={`text-white py-2 px-3 rounded ${isActive ? 'bg-card-kiru fw-bold' : ''}`}
                                             style={{
-                                                transition: 'background-color 0.2s ease'
+                                                transition: 'background-color 0.2s ease',
+                                                textDecoration: 'none'
                                             }}
                                         >
                                             {link.label}
@@ -220,10 +208,6 @@ const Header = ({ activeLink = 'Home' }) => {
             </Container>
 
             <style jsx>{`
-                .cursor-pointer {
-                    cursor: pointer;
-                }
-                
                 .header-scrolled {
                     backdrop-filter: blur(10px);
                     background-color: rgba(26, 26, 26, 0.95) !important;

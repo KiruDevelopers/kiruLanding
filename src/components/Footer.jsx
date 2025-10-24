@@ -1,6 +1,7 @@
 // src/components/Footer.jsx
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -21,11 +22,10 @@ const footerLinks = {
 };
 
 // Componente para el logo en el footer
-const FooterLogo = ({ onClick }) => (
-    <div 
-        className="d-inline-flex align-items-center gap-2 cursor-pointer"
-        onClick={onClick}
-        style={{ cursor: 'pointer' }}
+const FooterLogo = () => (
+    <Link 
+        to="/"
+        className="d-inline-flex align-items-center gap-2 text-decoration-none"
     >
         <img 
             src={kiruLogo} 
@@ -46,8 +46,8 @@ const FooterLogo = ({ onClick }) => (
                 e.currentTarget.style.filter = 'brightness(0.9)';
             }}
         />
-        <span className="text-white fw-bold small"></span>
-    </div>
+        <span className="text-white fw-bold small">Kiru</span>
+    </Link>
 );
 
 // Componente para enlaces legales
@@ -107,10 +107,6 @@ const SocialLinks = ({ links }) => (
 const Footer = () => {
     const currentYear = new Date().getFullYear();
 
-    const handleLogoClick = () => {
-        window.location.href = '/';
-    };
-
     return (
         <footer className="bg-dark-kiru border-top border-secondary border-opacity-25 mt-5">
             <Container className="py-5">
@@ -118,7 +114,7 @@ const Footer = () => {
                 <Row className="g-4 pb-4 border-bottom border-secondary border-opacity-25">
                     {/* Columna izquierda: Logo y descripción */}
                     <Col md={6} lg={4}>
-                        <FooterLogo onClick={handleLogoClick} />
+                        <FooterLogo />
                         <p className="text-secondary small mt-3 mb-0 lh-lg">
                             Desarrollo web preciso, rápido y real. Soluciones digitales con trato humano.
                         </p>
@@ -128,18 +124,18 @@ const Footer = () => {
                     <Col md={6} lg={4}>
                         <h6 className="text-white fw-bold mb-3 text-uppercase small">Enlaces</h6>
                         <div className="d-flex flex-column gap-2">
-                            <a href="/servicios" className="text-secondary small text-decoration-none footer-link">
+                            <Link to="/servicios" className="text-secondary small text-decoration-none footer-link">
                                 Servicios
-                            </a>
-                            <a href="/stack" className="text-secondary small text-decoration-none footer-link">
+                            </Link>
+                            <Link to="/stack" className="text-secondary small text-decoration-none footer-link">
                                 Stack
-                            </a>
-                            <a href="/manifiesto" className="text-secondary small text-decoration-none footer-link">
+                            </Link>
+                            <Link to="/manifiesto" className="text-secondary small text-decoration-none footer-link">
                                 Manifiesto
-                            </a>
-                            <a href="/quienes-somos" className="text-secondary small text-decoration-none footer-link">
+                            </Link>
+                            <Link to="/quienes-somos" className="text-secondary small text-decoration-none footer-link">
                                 Quiénes Somos
-                            </a>
+                            </Link>
                         </div>
                     </Col>
 
@@ -159,7 +155,7 @@ const Footer = () => {
                             <p className="text-secondary small mb-0">
                                 Una herramienta pensada por
                             </p>
-                            <FooterLogo onClick={handleLogoClick} />
+                            <FooterLogo />
                         </div>
                     </Col>
                     <Col md={6} className="text-center text-md-end">
@@ -184,10 +180,6 @@ const Footer = () => {
                 
                 .footer-link:hover {
                     color: var(--color-primary) !important;
-                }
-                
-                .cursor-pointer {
-                    cursor: pointer;
                 }
             `}</style>
         </footer>
