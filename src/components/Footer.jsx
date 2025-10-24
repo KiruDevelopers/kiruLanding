@@ -46,7 +46,7 @@ const FooterLogo = () => (
                 e.currentTarget.style.filter = 'brightness(0.9)';
             }}
         />
-        <span className="text-white fw-bold small">Kiru</span>
+        <span className="text-white fw-bold small"></span>
     </Link>
 );
 
