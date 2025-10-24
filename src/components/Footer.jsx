@@ -167,7 +167,7 @@ const Footer = () => {
                 <Row className="pt-3">
                     <Col className="text-center">
                         <p className="text-secondary small mb-0" style={{ fontSize: '0.75rem' }}>
-                            © {currentYear} Kiru. Todos los derechos reservados.
+                            © {currentYear} Kinetic Rules, Web Developers. Todos los derechos reservados.
                         </p>
                     </Col>
                 </Row>
