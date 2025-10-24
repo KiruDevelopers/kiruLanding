@@ -50,16 +50,17 @@ const NavLinkItem = ({ link, isActive }) => (
     <Nav.Link 
         as={Link}
         to={link.path}
-        className={`text-white px-3 position-relative ${isActive ? 'fw-bold' : ''}`}
+        className={`nav-link-kiru text-white px-3 position-relative ${isActive ? 'fw-bold active' : ''}`}
         style={{
-            transition: 'color 0.2s ease',
-            textDecoration: 'none'
+            transition: 'all 0.2s ease',
+            textDecoration: 'none',
+            borderRadius: '4px'
         }}
     >
         {link.label}
         {isActive && (
             <span 
-                className="position-absolute bottom-0 start-50 translate-middle-x bg-primary"
+                className="position-absolute bottom-0 start-50 translate-middle-x bg-primary active-indicator"
                 style={{ 
                     width: '30px', 
                     height: '2px',
@@ -185,9 +186,9 @@ const Header = () => {
                                             as={Link}
                                             to={link.path}
                                             onClick={handleClose}
-                                            className={`text-white py-2 px-3 rounded ${isActive ? 'bg-card-kiru fw-bold' : ''}`}
+                                            className={`nav-link-kiru-mobile text-white py-2 px-3 rounded ${isActive ? 'bg-card-kiru fw-bold' : ''}`}
                                             style={{
-                                                transition: 'background-color 0.2s ease',
+                                                transition: 'all 0.2s ease',
                                                 textDecoration: 'none'
                                             }}
                                         >
@@ -228,6 +229,57 @@ const Header = () => {
                 
                 .logo-image:hover {
                     filter: brightness(1.1);
+                }
+
+                /* Estilos para los enlaces de navegación - Desktop */
+                .nav-link-kiru {
+                    position: relative;
+                    padding: 0.5rem 1rem !important;
+                    color: white !important;
+                    transition: all 0.2s ease;
+                }
+
+                .nav-link-kiru:hover {
+                    background-color: #FF0081 !important;
+                    color: #1a1a1a !important;
+                }
+
+                .nav-link-kiru.active {
+                    color: white !important;
+                }
+
+                .nav-link-kiru.active:hover {
+                    background-color: #FF0081 !important;
+                    color: #1a1a1a !important;
+                }
+
+                /* Ocultar el indicador activo en hover */
+                .nav-link-kiru:hover .active-indicator {
+                    opacity: 0;
+                    transition: opacity 0.2s ease;
+                }
+
+                /* Estilos para enlaces de navegación - Mobile */
+                .nav-link-kiru-mobile {
+                    border-radius: 8px;
+                }
+
+                .nav-link-kiru-mobile:hover {
+                    background-color: #ff0081 !important;
+                    color: #1a1a1a !important;
+                }
+
+                .nav-link-kiru-mobile.bg-card-kiru:hover {
+                    background-color: #ff0081 !important;
+                }
+
+                .active-indicator {
+                   background-color: #ff0081 !important;
+                }
+
+                /* Ocultar el punto activo en hover mobile */
+                .nav-link-kiru-mobile:hover .text-primary {
+                    color: #1a1a1a !important;
                 }
             `}</style>
         </header>

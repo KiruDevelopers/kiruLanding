@@ -14,26 +14,22 @@ const principiosData = [
     {
         id: 'simple',
         title: "Simple",
-        content: "Lo simple es resultado de pensar mejor, no de hacer menos. Diseñamos flujos que cualquier persona del equipo puede entender en minutos. Menos fricción, más entrega.",
-        isPrimary: false
+        content: "Lo simple es resultado de pensar mejor, no de hacer menos. Diseñamos flujos que cualquier persona del equipo puede entender en minutos. Menos fricción, más entrega."
     },
     {
         id: 'precisa',
         title: "Precisa",
-        content: "La precisión se mide en decisiones. Priorizamos métricas, definimos criterios de aceptación y documentamos lo mínimo indispensable. Cada sprint cierra con claridad.",
-        isPrimary: false
+        content: "La precisión se mide en decisiones. Priorizamos métricas, definimos criterios de aceptación y documentamos lo mínimo indispensable. Cada sprint cierra con claridad."
     },
     {
         id: 'real',
         title: "Real",
-        content: "Productos reales resuelven problemas reales. Validamos temprano, cortamos lo que no suma y evitamos dogmas. Tecnología al servicio del contexto.",
-        isPrimary: false
+        content: "Productos reales resuelven problemas reales. Validamos temprano, cortamos lo que no suma y evitamos dogmas. Tecnología al servicio del contexto."
     },
     {
         id: 'eficiencia',
         title: "Eficiencia y calidad sin rigidez",
-        content: "Trabajamos con un enfoque ágil y adaptable. La excelencia no es pesada, es una combinación de buenas prácticas, automatización y comunicación honesta. Nos movemos rápido sin romper lo importante.",
-        isPrimary: false
+        content: "Trabajamos con un enfoque ágil y adaptable. La excelencia no es pesada, es una combinación de buenas prácticas, automatización y comunicación honesta. Nos movemos rápido sin romper lo importante."
     }
 ];
 
@@ -45,7 +41,7 @@ const typographyQuotes = [
 
 // Componente Hero Section
 const HeroSection = () => (
-    <section className="mb-5 pb-4">
+    <section className="mb-5">
         <p className="text-secondary fw-bold text-uppercase small mb-2" style={{ letterSpacing: '0.1em' }}>
             Manifiesto
         </p>
@@ -78,10 +74,7 @@ const MainPrinciple = () => (
 
 // Componente para items del manifiesto
 const ManifestoItem = ({ principio }) => (
-    <Card 
-        className={`border-0 mb-4 h-100 ${principio.isPrimary ? 'bg-card-kiru' : 'bg-dark-kiru'}`}
-        style={principio.isPrimary ? { borderLeft: '4px solid var(--color-primary)' } : {}}
-    >
+    <Card className="bg-dark-kiru border-0 mb-4 h-100">
         <Card.Body className="p-4">
             <h4 className="text-white mb-3 fw-bold">{principio.title}</h4>
             <p className="text-secondary mb-0 lh-lg">{principio.content}</p>
@@ -141,54 +134,18 @@ const TypographyBlocks = ({ quotes }) => (
     </div>
 );
 
-// Componente para sección de principios (columna izquierda)
-const PrinciplesSection = ({ principios, onCTAClick }) => (
-    <Col lg={7} className="mb-4">
-        {/* Principio Principal */}
-        <MainPrinciple />
-
-        {/* Principios Secundarios */}
-        {principios.map((principio) => (
-            <ManifestoItem 
-                key={principio.id}
-                principio={principio}
-            />
-        ))}
-
-        {/* CTA de Principios */}
-        <div className="mt-4">
-            <Button 
-                variant="outline-light" 
-                className="btn-kiru-outline"
-                size="sm"
-                onClick={onCTAClick}
-            >
-                Principios que guían cada entrega
-            </Button>
-        </div>
-    </Col>
-);
-
-// Componente para sección de visualización (columna derecha)
-const VisualizationSection = ({ quotes }) => (
-    <Col lg={5} className="mb-4">
-        <BrandVisualization />
-        <TypographyBlocks quotes={quotes} />
-    </Col>
-);
-
 // Componente para el CTA intermedio
 const CTASection = ({ onContactClick }) => (
-    <section className="my-5">
+    <section className="my-5 py-4">
         <Card className="bg-dark-kiru border-0 border-top border-bottom border-secondary border-opacity-25">
             <Card.Body className="p-4">
                 <Row className="align-items-center g-3">
                     <Col xs={12} md={6}>
                         <div className="d-flex align-items-center gap-3">
-                            <span className="fs-1 fw-bold text-primary">K</span>
+                            <span className="fs-1 fw-bold text-primary">KIRU</span>
                             <div>
                                 <p className="mb-0 text-secondary small text-uppercase" style={{ letterSpacing: '0.05em' }}>
-                                    Web Developers
+                                    Herramientas a tú medida, donde la tecnología se adapta a tus necesidades.
                                 </p>
                             </div>
                         </div>
@@ -214,11 +171,12 @@ const ManifestoSummary = () => {
     const summaryPoints = [
         "Simple, precisa, real. Eficiencia y calidad sin rigidez.",
         "Hacer menos, lograr más: claridad que acelera productos.",
-        "Logo y geometrías refuerzan una identidad funcional."
+        "No desarrollamos software, diseñamos herramientas."
+        
     ];
 
     return (
-        <section className="mb-5">
+        <section className="mb-5 pb-4">
             <Card className="bg-card-kiru border-0">
                 <Card.Body className="p-4 p-md-5">
                     <Row className="g-4">
@@ -246,35 +204,39 @@ const ManifestoSummary = () => {
 
 // Componente principal
 const Manifiesto = () => {
-    // Handlers
-    const handlePrinciplesClick = () => {
-        console.log('Ver más sobre principios');
-        // Aquí puedes agregar lógica para scroll o navegación
-    };
-
     const handleContactClick = () => {
         console.log('Solicitar asesoría desde Manifiesto');
-        // Lógica para abrir modal o formulario
     };
 
     return (
-        <div className="bg-dark-kiru min-vh-100">
-            <Header />
+        <div className="bg-dark-kiru" style={{ minHeight: '100vh' }}>
+            <Header activeLink="Manifiesto" />
 
             <Container className="py-5">
                 {/* Hero Section */}
                 <HeroSection />
 
+                {/* Principio Principal */}
+                <MainPrinciple />
+
                 {/* Contenido principal en dos columnas */}
-                <Row>
+                <Row className="g-4 mb-5">
                     {/* Columna Izquierda: Principios */}
-                    <PrinciplesSection 
-                        principios={principiosData}
-                        onCTAClick={handlePrinciplesClick}
-                    />
+                    <Col lg={7}>
+                        <Row>
+                            {principiosData.map((principio) => (
+                                <Col key={principio.id} xs={12}>
+                                    <ManifestoItem principio={principio} />
+                                </Col>
+                            ))}
+                        </Row>
+                    </Col>
 
                     {/* Columna Derecha: Visualización */}
-                    <VisualizationSection quotes={typographyQuotes} />
+                    <Col lg={5}>
+                        <BrandVisualization />
+                        <TypographyBlocks quotes={typographyQuotes} />
+                    </Col>
                 </Row>
                 
                 {/* CTA Intermedio */}

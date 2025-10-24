@@ -5,7 +5,7 @@
 
 /* 2. Variables de color (Adaptadas para usar en estilos personalizados) */
 :root {
-  --color-primary: #EE3E90; /* Rosa brillante */
+  --color-primary: #ff0081; /* Magenta */
   --color-dark-bg: #101014; /* Fondo negro muy oscuro */
   --color-text-light: #f4f4f4; /* Texto principal claro */
   --color-text-secondary: #999; /* Texto secundario/descripciones */
