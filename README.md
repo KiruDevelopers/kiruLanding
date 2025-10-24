@@ -37,22 +37,26 @@ Aquí puedes ver una representación visual de las principales páginas del proy
 ### 1. Home
 > *Descripción: La página principal, destacando el hero de "Webs precisas. Rápidas. Reales."*
 >
-> **[INSERTAR MOCKUP DE HOMEKIRU.JPG AQUÍ]**
+> <img width="3600" height="5073" alt="HomeKiru" src="https://github.com/user-attachments/assets/e5d96539-10a2-425f-8acb-2893aa11c7f0" />
+
 
 ### 2. Servicios
 > *Descripción: Vista detallada de los módulos de servicio con llamadas a la acción diferenciadas.*
 >
-> **[INSERTAR MOCKUP DE SERVICIOSKIRU.JPG AQUÍ]**
+> <img width="3600" height="4053" alt="ServiciosKiru" src="https://github.com/user-attachments/assets/56255bdb-a6c0-4d78-82b8-bf77ed048929" />
+
 
 ### 3. Stack Tecnológico
 > *Descripción: Organización por capas del stack, destacando tecnologías clave y la CTA de Infraestructura.*
 >
-> **[INSERTAR MOCKUP DE STACKTECNOLGICO.JPG AQUÍ]**
+><img width="3600" height="3714" alt="StackTecnolgico" src="https://github.com/user-attachments/assets/fd7c00d8-1b53-4ae3-b397-b7ef8eb87c85" />
+
 
 ### 4. Manifiesto
 > *Descripción: La página que expone la filosofía de la marca y sus principios rectores ("Simple, Precisa, Real").*
 >
-> **[INSERTAR MOCKUP DE MANIFESTOPAGE.JPG AQUÍ]**
+>![Uploading ManifestoPage.png…]()
+
 
 ---
 
