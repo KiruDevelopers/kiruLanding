@@ -116,7 +116,8 @@ const Footer = () => {
                     <Col md={6} lg={4}>
                         <FooterLogo />
                         <p className="text-secondary small mt-3 mb-0 lh-lg">
-                            Desarrollo web preciso, rápido y real. Soluciones digitales con trato humano.
+                            No desarrollamos software, diseñamos herramientas. <br/> 
+                            Simple, preciso, real.
                         </p>
                     </Col>
 

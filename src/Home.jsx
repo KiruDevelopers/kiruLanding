@@ -9,6 +9,7 @@ import Card from 'react-bootstrap/Card';
 import Badge from 'react-bootstrap/Badge';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import imagenHome from './assets/imagenhome.jpg';
 
 // Datos de servicios
 const serviciosData = [
@@ -69,6 +70,7 @@ const manifestoItems = [
 ];
 
 // Componente Hero Section
+// Componente Hero Section
 const HeroSection = ({ onContactClick, onServicesClick }) => (
     <section className="py-5 py-lg-6">
         <Row className="align-items-center g-4 g-lg-5">
@@ -110,25 +112,12 @@ const HeroSection = ({ onContactClick, onServicesClick }) => (
                 </div>
             </Col>
             <Col lg={5} className="mt-5 mt-lg-0">
-                <Card className="bg-card-kiru border-0 overflow-hidden">
-                    <div 
-                        className="hero-geometric-placeholder d-flex align-items-center justify-content-center"
-                        style={{ minHeight: '400px' }}
-                    >
-                        {/* Placeholder geométrico */}
-                        <div className="text-center p-4">
-                            <div className="mb-4">
-                                <svg width="120" height="120" viewBox="0 0 120 120" className="mx-auto">
-                                    <rect x="10" y="10" width="100" height="100" fill="none" stroke="var(--color-primary)" strokeWidth="2"/>
-                                    <circle cx="60" cy="60" r="35" fill="none" stroke="var(--color-secondary)" strokeWidth="2"/>
-                                    <line x1="30" y1="30" x2="90" y2="90" stroke="var(--color-primary)" strokeWidth="1"/>
-                                    <line x1="90" y1="30" x2="30" y2="90" stroke="var(--color-secondary)" strokeWidth="1"/>
-                                </svg>
-                            </div>
-                            <p className="text-secondary small mb-0">Geometría & Precisión</p>
-                        </div>
-                    </div>
-                </Card>
+                <img 
+                    src={imagenHome} 
+                    alt="Geometría & Precisión" 
+                    className="img-fluid w-100"
+                    style={{ objectFit: 'cover' }}
+                />
             </Col>
         </Row>
     </section>
