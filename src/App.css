@@ -1,0 +1,105 @@
+/* src/App.css */
+
+/* Fondos y Contenedores */
+.bg-dark-kiru {
+    background-color: var(--color-dark-bg) !important;
+}
+
+/* Para manejar el header que puede ser sticky */
+.bg-dark-kiru-header {
+    background-color: var(--color-dark-bg);
+    z-index: 1020; /* Asegura que esté sobre el contenido */
+}
+
+.bg-card-kiru {
+    background-color: var(--color-card-bg) !important;
+}
+
+.bg-cta-kiru {
+    background-color: var(--color-cta-bg) !important;
+}
+
+/* Botones Kiru (Clase principal para el rosa) */
+.btn-kiru-primary {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    color: var(--color-dark-bg) !important;
+    font-weight: 600 !important;
+}
+
+.btn-kiru-primary:hover {
+    background-color: #f77cc1 !important; /* Rosa más claro al pasar el ratón */
+    border-color: #f77cc1 !important;
+}
+
+/* Botón Outline Secundario (Ver Servicios) */
+.btn-kiru-outline {
+    border: 2px solid var(--color-text-light) !important;
+    color: var(--color-text-light) !important;
+}
+
+.btn-kiru-outline:hover {
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+    background-color: transparent !important;
+}
+
+/* Botón Outline de CTA (Escribenos) - Borde rosa */
+.btn-kiru-secondary-outline {
+    border: 2px solid var(--color-primary) !important;
+    color: var(--color-primary) !important;
+}
+
+.btn-kiru-secondary-outline:hover {
+    background-color: var(--color-primary) !important;
+    color: var(--color-dark-bg) !important;
+}
+
+/* Placeholder de Imagen Geométrica (Manteniendo el estilo visual anterior) */
+.hero-image-placeholder {
+    /* Simula el área de la imagen oscura con el degradado geométrico */
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    position: relative;
+    /* Efecto de borde/degradado sutil que se ve en la imagen */
+    background-image: repeating-linear-gradient(0deg, #2a2a33, #2a2a33 1px, transparent 1px, transparent 40px), 
+                      repeating-linear-gradient(90deg, #2a2a33, #2a2a33 1px, transparent 1px, transparent 40px);
+    background-size: 40px 40px;
+}
+
+/* Icono de Servicio (Círculo con borde rosa) */
+.service-icon-kiru {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+}
+
+/* Tags de Stack */
+.tag-kiru {
+    background-color: var(--color-card-bg) !important;
+    border: 1px solid var(--color-border);
+    font-weight: 600;
+}
+
+
+:root {
+    /* ... otras variables ... */
+    --color-blue-kiru: #375A7F; /* Azul oscuro para los botones secundarios de servicio */
+    --color-blue-kiru-hover: #456C93;
+}
+
+/* Botón de Servicio Secundario (Azul) */
+.btn-kiru-blue {
+    background-color: var(--color-blue-kiru) !important;
+    border-color: var(--color-blue-kiru) !important;
+    color: var(--color-text-light) !important;
+    font-weight: 600 !important;
+}
+
+.btn-kiru-blue:hover {
+    background-color: var(--color-blue-kiru-hover) !important;
+    border-color: var(--color-blue-kiru-hover) !important;
+}

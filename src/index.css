@@ -1,0 +1,34 @@
+/* src/index.css */
+
+/* 1. Importación de los estilos base de Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* 2. Variables de color (Adaptadas para usar en estilos personalizados) */
+:root {
+  --color-primary: #EE3E90; /* Rosa brillante */
+  --color-dark-bg: #101014; /* Fondo negro muy oscuro */
+  --color-text-light: #f4f4f4; /* Texto principal claro */
+  --color-text-secondary: #999; /* Texto secundario/descripciones */
+  --color-card-bg: #1c1c21; /* Fondo de las tarjetas/secciones internas */
+  --color-cta-bg: #374259; /* Fondo de la CTA final */
+  --color-border: #444; /* Borde sutil */
+  --font-family-base: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* 3. Ajustes globales */
+body, #root {
+  background-color: var(--color-dark-bg);
+  color: var(--color-text-light);
+  font-family: var(--font-family-base);
+  min-height: 100vh;
+}
+
+/* Forzar el color blanco del texto de Bootstrap a ser el color personalizado */
+.text-white {
+    color: var(--color-text-light) !important;
+}
+
+/* Reset básico para asegurar la consistencia */
+* {
+  box-sizing: border-box;
+}
