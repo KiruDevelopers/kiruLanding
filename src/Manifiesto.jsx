@@ -14,29 +14,29 @@ const principiosData = [
     {
         id: 'simple',
         title: "Simple",
-        content: "Lo simple es resultado de pensar mejor, no de hacer menos. Diseñamos flujos que cualquier persona del equipo puede entender en minutos. Menos fricción, más entrega."
+        content: "Lo simple es resultado de pensar mejor, no de hacer menos. Diseñamos flujos que eliminan la fricción, permitiendo que cualquier miembro del equipo los entienda en minutos. Menos complicaciones, más entrega de valor."
     },
     {
         id: 'precisa',
         title: "Precisa",
-        content: "La precisión se mide en decisiones. Priorizamos métricas, definimos criterios de aceptación y documentamos lo mínimo indispensable. Cada sprint cierra con claridad."
+        content: "LLa precisión se mide en decisiones certeras. Priorizamos métricas claves, definimos criterios de aceptación exactos y documentamos lo mínimo indispensable. Cada ciclo se cierra con resultados de máxima eficiencia y sin fricciones."
     },
     {
         id: 'real',
         title: "Real",
-        content: "Productos reales resuelven problemas reales. Validamos temprano, cortamos lo que no suma y evitamos dogmas. Tecnología al servicio del contexto."
+        content: "Soluciones reales resuelven problemas reales. Nos aseguramos que funcione para ti desde el inicio, cortamos lo que no suma y evitamos dogmas. Priorizamos la transparencia radical y la tecnología al servicio del contexto."
     },
     {
         id: 'eficiencia',
         title: "Eficiencia y calidad sin rigidez",
-        content: "Trabajamos con un enfoque ágil y adaptable. La excelencia no es pesada, es una combinación de buenas prácticas, automatización y comunicación honesta. Nos movemos rápido sin romper lo importante."
+        content: "Trabajamos con un enfoque ágil y adaptable. La calidad no es pesada, es una combinación de buenas prácticas, automatización y comunicación honesta y transparente. Nos movemos rápido sin romper lo importante, garantizando resultados óptimos con flexibilidad."
     }
 ];
 
 // Datos de citas tipográficas
 const typographyQuotes = [
-    "Construimos entregables que hablan por sí mismos.",
-    "Documentación mínima, comunicación efectiva."
+    "Materializamos la visión con Simplicidad Funcional y una Precisión impecable.",
+    "Simplicidad, Precisión y Trato Humano en cada punto de contacto"
 ];
 
 // Componente Hero Section
@@ -46,11 +46,11 @@ const HeroSection = () => (
             Manifiesto
         </p>
         <h1 className="display-5 fw-bold mb-4 text-white">
-            Kiru: Web Developers con Trato Humano
+            Kiru: Web Developers 
         </h1>
         <p className="lead text-secondary lh-lg" style={{ maxWidth: '800px' }}>
-            Creemos en procesos claros y en resultados medibles. Nuestra guía: 
-            Simple, precisa, real. Promesa de valor: Eficiencia y calidad sin rigidez.
+           Materializamos su visión con procesos transparentes y resultados medibles. 
+           Nuestra guía: Simple, Precisa y Real, garantizando Eficiencia y Calidad sin rigidez.
         </p>
     </section>
 );
@@ -63,10 +63,10 @@ const MainPrinciple = () => (
     >
         <Card.Body className="p-4 p-md-5">
             <h2 className="text-white mb-3 fw-bold">
-                Hacer menos, lograr más: claridad que acelera productos.
+                Simplicidad Funcional y Precisión Absoluta: Claridad que acelera los productos.
             </h2>
             <p className="text-secondary mb-0 fs-6 lh-lg">
-                Usamos lo esencial y lo llevamos al máximo. Nada de ruido, solo valor.
+               Precisión Absoluta: Usamos lo esencial para entregar el máximo valor, eliminando el ruido innecesario.
             </p>
         </Card.Body>
     </Card>
@@ -89,7 +89,7 @@ const BrandVisualization = () => (
         <Card className="bg-card-kiru border-0">
             <Card.Body className="p-4">
                 <p className="text-secondary small mb-4">
-                    Logo, proporciones y geometría que inspiran nuestro sistema.
+                    Geometría y proporciones precisas inspiran la Simplicidad Funcional de todo nuestro sistema.
                 </p>
                 <div 
                     className="p-5 text-center bg-dark rounded-3 d-flex flex-column justify-content-center align-items-center" 
@@ -110,29 +110,7 @@ const BrandVisualization = () => (
     </div>
 );
 
-// Componente para bloques tipográficos
-const TypographyBlocks = ({ quotes }) => (
-    <div className="mb-4">
-        <h3 className="text-white fs-5 mb-3 fw-bold">Bloques Neotech</h3>
-        <Card className="bg-card-kiru border-0">
-            <Card.Body className="p-4">
-                <p className="text-secondary small mb-4">
-                    Usamos la tipografía Neotech de forma destacada para énfasis y cifras.
-                </p>
-                {quotes.map((quote, index) => (
-                    <blockquote 
-                        key={index}
-                        className={`mb-0 ${index < quotes.length - 1 ? 'mb-4 pb-3 border-bottom border-secondary border-opacity-25' : ''}`}
-                    >
-                        <h5 className="text-white fw-bold lh-base">
-                            "{quote}"
-                        </h5>
-                    </blockquote>
-                ))}
-            </Card.Body>
-        </Card>
-    </div>
-);
+
 
 // Componente para el CTA intermedio
 const CTASection = ({ onContactClick }) => (

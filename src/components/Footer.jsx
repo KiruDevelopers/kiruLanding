@@ -116,7 +116,7 @@ const Footer = () => {
                     <Col md={6} lg={4}>
                         <FooterLogo />
                         <p className="text-secondary small mt-3 mb-0 lh-lg">
-                            No desarrollamos software, diseñamos herramientas. <br/> 
+                            No creamos software, diseñamos herramientas. <br/> 
                             Simple, preciso, real.
                         </p>
                     </Col>
