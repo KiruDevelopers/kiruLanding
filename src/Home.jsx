@@ -16,28 +16,28 @@ const serviciosData = [
     {
         id: 'captura-requerimientos',
         title: 'Captura de Requerimientos',
-        description: 'Entregables, alcance, criterios de adaptación y mapa de riesgos.',
+        description: 'Análisis Simple y Preciso: Alcance, entregables y criterios de adaptación claros. Mapa de riesgos transparente.',
         icon: '📋',
         color: 'primary'
     },
     {
         id: 'maquetado',
         title: 'Maquetado',
-        description: 'De wireframes a interfaces, interfaces listas para producción.',
+        description: 'Interfaces simples y funcionales: Pasando de wireframes a una entrega de calidad lista para producción.',
         icon: '🎨',
         color: 'info'
     },
     {
         id: 'asesoria',
         title: 'Asesoría',
-        description: 'Auditorías técnicas y optimización de procesos y performance.',
+        description: 'Optimización precisa de procesos para alcanzar la máxima eficiencia y performance.',
         icon: '💡',
         color: 'primary'
     },
     {
         id: 'diseno-web',
         title: 'Diseño Web',
-        description: 'Lenguaje visual moderno, geométrico y accesible. Sistemas de diseño.',
+        description: 'Diseño geométrico y legible. Creación de interfaces con simplicidad funcional y accesibilidad inclusiva.',
         icon: '✨',
         color: 'info'
     },
@@ -59,12 +59,12 @@ const stackTags = [
 const manifestoItems = [
     {
         title: 'Simple, precisa, real.',
-        description: 'Diseño claro, spacing generoso y contraste alto. Accesibilidad como base.',
+        description: 'Diseño Simple y Preciso. Contraste, espaciado generoso y accesibilidad Real.',
         highlight: true
     },
     {
         title: 'Trato humano.',
-        description: 'Comunicación directa, soluciones claras y funcionales con resultados medibles.',
+        description: 'Fomentamos la confianza con una comunicación directa y sin jerga. Soluciones funcionales y claras con resultados medibles y reales.',
         highlight: true
     }
 ];
@@ -81,15 +81,14 @@ const HeroSection = ({ onContactClick, onServicesClick }) => (
                         className="mb-3 px-3 py-2 text-uppercase fw-bold"
                         style={{ fontSize: '0.7rem', letterSpacing: '0.1em' }}
                     >
-                        Precisión geométrica
+                        Eficiencia y calidad sin rigidez
                     </Badge>
                     <h1 className="display-3 fw-bold mb-4 text-white lh-sm">
                         Webs precisas.<br />
-                        Rápidas. Reales.
+                        Funcionales. Eficientes.
                     </h1>
                     <p className="lead text-secondary mb-4 lh-lg" style={{ maxWidth: '600px' }}>
-                        Diseñamos y entregamos experiencias web de alto contraste con estética 
-                        geométrica y cero ruido. Simple, precisa, real.
+                       Diseñamos y entregamos experiencias web de alta calidad y accesibilidad. <br /> Cero ruido visual para una Simplicidad Funcional. Simple, precisa, real."
                     </p>
                     <div className="hero-actions d-flex flex-column flex-sm-row gap-3">
                         <Button 
