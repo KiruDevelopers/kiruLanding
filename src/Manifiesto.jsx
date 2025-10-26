@@ -110,7 +110,29 @@ const BrandVisualization = () => (
     </div>
 );
 
-
+// Componente para bloques tipográficos
+const TypographyBlocks = ({ quotes }) => (
+    <div className="mb-4">
+        <h3 className="text-white fs-5 mb-3 fw-bold">Bloques Neotech</h3>
+        <Card className="bg-card-kiru border-0">
+            <Card.Body className="p-4">
+                <p className="text-secondary small mb-4">
+                    Usamos la tipografía Neotech de forma destacada para énfasis y cifras.
+                </p>
+                {quotes.map((quote, index) => (
+                    <blockquote 
+                        key={index}
+                        className={`mb-0 ${index < quotes.length - 1 ? 'mb-4 pb-3 border-bottom border-secondary border-opacity-25' : ''}`}
+                    >
+                        <h5 className="text-white fw-bold lh-base">
+                            "{quote}"
+                        </h5>
+                    </blockquote>
+                ))}
+            </Card.Body>
+        </Card>
+    </div>
+);
 
 // Componente para el CTA intermedio
 const CTASection = ({ onContactClick }) => (
